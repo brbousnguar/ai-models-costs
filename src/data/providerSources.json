@@ -206,40 +206,6 @@
     ]
   },
   {
-    "id": "perplexity",
-    "provider": "Perplexity",
-    "country": "United States",
-    "region": "US",
-    "pages": [
-      {
-        "label": "Perplexity API pricing",
-        "url": "https://docs.perplexity.ai/docs/getting-started/pricing",
-        "kind": "pricing",
-        "primary": true
-      }
-    ]
-  },
-  {
-    "id": "runway",
-    "provider": "Runway",
-    "country": "United States",
-    "region": "US",
-    "pages": [
-      {
-        "label": "Runway API pricing",
-        "url": "https://docs.dev.runwayml.com/guides/pricing/",
-        "kind": "pricing",
-        "primary": true
-      },
-      {
-        "label": "Runway API models",
-        "url": "https://docs.dev.runwayml.com/guides/models/",
-        "kind": "models",
-        "primary": false
-      }
-    ]
-  },
-  {
     "id": "elevenlabs",
     "provider": "ElevenLabs",
     "country": "United States",

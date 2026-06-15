@@ -939,56 +939,6 @@ export const pricingRows: PricingRow[] = [
     "lastChecked": "2026-06-15"
   },
   {
-    "id": "perplexity-web-search",
-    "provider": "Perplexity",
-    "model": "Web Search API",
-    "country": "United States",
-    "region": "US",
-    "modality": "Tooling",
-    "contextWindow": "Per request",
-    "input": null,
-    "cachedInput": null,
-    "output": {
-      "label": "Search API",
-      "value": 5,
-      "unit": "USD / 1K requests"
-    },
-    "extra": [
-      {
-        "label": "web_search tool",
-        "value": 0.005,
-        "unit": "USD / invocation"
-      }
-    ],
-    "notes": "Niche grounded search API; token costs may apply separately for Sonar models.",
-    "sourceLabel": "Perplexity API pricing",
-    "sourceUrl": "https://docs.perplexity.ai/docs/getting-started/pricing",
-    "sourceStatus": "checked",
-    "lastChecked": "2026-06-15"
-  },
-  {
-    "id": "runway-gen-4-5",
-    "provider": "Runway",
-    "model": "Gen-4.5",
-    "country": "United States",
-    "region": "US",
-    "modality": "Video",
-    "contextWindow": "Credit based",
-    "input": null,
-    "cachedInput": null,
-    "output": {
-      "label": "Generation",
-      "value": 12,
-      "unit": "credits / sec"
-    },
-    "extra": [],
-    "notes": "Video generation API uses credits rather than published USD-per-second rates.",
-    "sourceLabel": "Runway API pricing",
-    "sourceUrl": "https://docs.dev.runwayml.com/guides/pricing/",
-    "sourceStatus": "checked",
-    "lastChecked": "2026-06-15"
-  },
-  {
     "id": "elevenlabs-flash-turbo",
     "provider": "ElevenLabs",
     "model": "Flash / Turbo TTS",
