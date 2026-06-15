@@ -9,6 +9,8 @@ import {
   Gauge,
   Globe2,
   Layers3,
+  RefreshCw,
+  ScanSearch,
   Search,
   Settings2,
   ShieldAlert,
@@ -24,6 +26,7 @@ type ViewKey = "board" | "sources";
 
 const allOption = "All";
 const initialSources = providerSourceSeed as ProviderSource[];
+const workflowUrl = "https://github.com/brbousnguar/ai-models-costs/actions/workflows/deploy-pages.yml";
 
 function uniqueValues(key: keyof PricingRow) {
   return [allOption, ...Array.from(new Set(pricingRows.map((row) => String(row[key])))).sort()];
@@ -137,6 +140,16 @@ function App() {
             <Settings2 size={16} aria-hidden="true" />
             Sources
           </button>
+        </div>
+        <div className="siteActions">
+          <button onClick={() => window.location.reload()} type="button">
+            <RefreshCw size={16} aria-hidden="true" />
+            Reload page
+          </button>
+          <a href={workflowUrl} target="_blank" rel="noreferrer">
+            <ScanSearch size={16} aria-hidden="true" />
+            Scan sources
+          </a>
         </div>
       </section>
 

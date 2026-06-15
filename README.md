@@ -27,6 +27,8 @@ npm run refresh-prices
 
 Run the refresh command before building or deploying. It checks the managed official provider URLs, stamps each row with `lastChecked`, and marks source availability when at least one official page for that provider is reachable. Vendor pricing pages vary widely, so the rows are curated from official sources instead of pretending every price can be safely scraped. If every source check for a provider fails, the dashboard keeps the row but marks it as `source-unavailable`.
 
+On the hosted static site, **Reload page** refreshes the current deployed data and **Scan sources** opens the GitHub Actions workflow that rebuilds the site from official provider pages.
+
 ## Managing Provider Pages
 
 Official provider pages live in `src/data/providerSources.json`. The dashboard's **Sources** view displays this registry as static links. Edit the JSON file to change provider pages.
