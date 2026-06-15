@@ -15,6 +15,8 @@ Build the static app with:
 npm run build
 ```
 
+The production app is fully static. It does not need a database, backend, or runtime API calls.
+
 ## Refreshing Pricing Data
 
 Pricing rows are generated into `src/data/pricing.generated.ts`:
@@ -23,13 +25,24 @@ Pricing rows are generated into `src/data/pricing.generated.ts`:
 npm run refresh-prices
 ```
 
-When running `npm run dev`, the dashboard also exposes a **Refresh prices** button that runs the same refresh command through a local Vite endpoint. The refresh command checks the managed official provider URLs, stamps each row with `lastChecked`, and marks source availability when at least one official page for that provider is reachable. Vendor pricing pages vary widely, so the rows are curated from official sources instead of pretending every price can be safely scraped. If every source check for a provider fails, the dashboard keeps the row but marks it as `source-unavailable`.
+Run the refresh command before building or deploying. It checks the managed official provider URLs, stamps each row with `lastChecked`, and marks source availability when at least one official page for that provider is reachable. Vendor pricing pages vary widely, so the rows are curated from official sources instead of pretending every price can be safely scraped. If every source check for a provider fails, the dashboard keeps the row but marks it as `source-unavailable`.
 
 ## Managing Provider Pages
 
-Official provider pages live in `src/data/providerSources.json`. Use the dashboard's **Sources** view during local development to edit each provider's pricing/model documentation URLs and save them back to the JSON file.
+Official provider pages live in `src/data/providerSources.json`. The dashboard's **Sources** view displays this registry as static links. Edit the JSON file to change provider pages.
 
-The refresh script reads from this provider-page registry, so source updates made in the UI are used by the next refresh.
+The refresh script reads from this provider-page registry, so JSON edits are used by the next refresh.
+
+## GitHub Pages
+
+The app uses relative asset paths, so the generated `dist/` folder can be published from any GitHub Pages path:
+
+```bash
+npm run refresh-prices
+npm run build
+```
+
+Deploy the contents of `dist/` with GitHub Pages.
 
 ## Data Notes
 

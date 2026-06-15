@@ -137,10 +137,7 @@ h2 {
   background: var(--panel);
 }
 
-.viewSwitch button,
-.primaryAction,
-.secondaryAction,
-.iconButton {
+.viewSwitch button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -149,9 +146,6 @@ h2 {
   border: 0;
   border-radius: 8px;
   font-weight: 800;
-}
-
-.viewSwitch button {
   padding: 0 12px;
   color: var(--muted);
   background: transparent;
@@ -160,46 +154,6 @@ h2 {
 .viewSwitch button.active {
   color: #fff;
   background: var(--accent-dark);
-}
-
-.primaryAction {
-  padding: 0 14px;
-  color: #fff;
-  background: var(--accent);
-}
-
-.secondaryAction {
-  width: fit-content;
-  padding: 0 12px;
-  color: var(--accent-dark);
-  background: #e7f1ec;
-}
-
-.iconButton {
-  width: 38px;
-  color: #883232;
-  background: #f8e7e5;
-}
-
-.statusLine {
-  margin: 8px 0 12px;
-  padding: 10px 12px;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  color: #35423e;
-  background: var(--panel);
-  font-size: 0.9rem;
-  white-space: pre-wrap;
-}
-
-.spin {
-  animation: spin 0.9s linear infinite;
-}
-
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
 }
 
 .hero-meta span {
@@ -372,14 +326,9 @@ h2 {
   font-weight: 800;
 }
 
-.sourceFields,
 .pageRow {
   display: grid;
   gap: 10px;
-}
-
-.sourceFields {
-  grid-template-columns: 1.2fr 1fr 1fr;
 }
 
 .pages {
@@ -388,61 +337,52 @@ h2 {
 }
 
 .pageRow {
-  grid-template-columns: minmax(150px, 0.85fr) minmax(260px, 1.8fr) minmax(110px, 0.45fr) auto auto;
-  align-items: end;
+  grid-template-columns: minmax(170px, 0.5fr) minmax(260px, 1fr);
+  align-items: center;
   padding: 10px;
   border: 1px solid #e2ded4;
   border-radius: 8px;
   background: var(--panel-strong);
 }
 
-.sourceFields label,
-.pageRow label {
+.pageRow div {
   display: grid;
-  gap: 5px;
   min-width: 0;
-  color: var(--muted);
+  gap: 4px;
+}
+
+.pageRow strong {
+  color: var(--ink);
+  font-size: 0.94rem;
+}
+
+.pageRow span {
+  width: fit-content;
+  padding: 4px 7px;
+  border-radius: 999px;
+  color: var(--accent-dark);
+  background: #e7f1ec;
   font-size: 0.72rem;
   font-weight: 800;
   text-transform: uppercase;
 }
 
-.urlField {
-  grid-template-columns: auto auto 1fr;
+.pageRow a {
+  display: inline-flex;
   align-items: center;
-}
-
-.urlField input {
-  grid-column: 1 / -1;
-}
-
-.sourceFields input,
-.pageRow input,
-.pageRow select {
-  width: 100%;
+  justify-self: end;
+  gap: 6px;
   min-width: 0;
-  min-height: 38px;
-  padding: 0 10px;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  color: var(--ink);
-  background: #fff;
+  max-width: 100%;
+  color: var(--accent-dark);
+  font-size: 0.86rem;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+  text-decoration: none;
 }
 
-.primaryCheck {
-  align-self: center;
-  grid-template-columns: auto auto;
-  align-items: center;
-  min-height: 38px;
-  padding: 0 8px;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background: #fff;
-}
-
-.primaryCheck input {
-  min-height: auto;
-  width: auto;
+.pageRow a:hover {
+  text-decoration: underline;
 }
 
 .priceCard {
@@ -584,7 +524,6 @@ h2 {
   .controls,
   .stats,
   .cards,
-  .sourceFields,
   .pageRow {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -604,7 +543,6 @@ h2 {
   .controls,
   .stats,
   .cards,
-  .sourceFields,
   .pageRow {
     grid-template-columns: 1fr;
   }
@@ -615,14 +553,16 @@ h2 {
     flex-direction: column;
   }
 
-  .viewSwitch,
-  .primaryAction,
-  .secondaryAction {
+  .viewSwitch {
     width: 100%;
   }
 
   .viewSwitch button {
     flex: 1;
+  }
+
+  .pageRow a {
+    justify-self: start;
   }
 
   .hero {

@@ -9,20 +9,15 @@ import {
   Gauge,
   Globe2,
   Layers3,
-  Link2,
-  Plus,
-  RefreshCw,
-  Save,
   Search,
   Settings2,
   ShieldAlert,
   Sparkles,
-  Trash2,
 } from "lucide-react";
 import { useMemo, useState, type ReactNode } from "react";
 import { generatedAt, pricingRows } from "./data/pricing.generated";
 import providerSourceSeed from "./data/providerSources.json";
-import type { PricePoint, ProviderPage, ProviderSource, PricingRow } from "./types";
+import type { PricePoint, ProviderSource, PricingRow } from "./types";
 
 type SortKey = "provider" | "model" | "input" | "output" | "modality";
 type ViewKey = "board" | "sources";
@@ -58,8 +53,6 @@ function App() {
   const [region, setRegion] = useState(allOption);
   const [modality, setModality] = useState(allOption);
   const [sortKey, setSortKey] = useState<SortKey>("provider");
-  const [isRefreshing, setIsRefreshing] = useState(false);
-  const [refreshMessage, setRefreshMessage] = useState("");
 
   const providers = useMemo(() => uniqueValues("provider"), []);
   const regions = useMemo(() => uniqueValues("region"), []);
@@ -108,27 +101,6 @@ function App() {
     return { providerCount, modalityCount, checkedCount, cheapestText };
   }, []);
 
-  async function handleRefreshPrices() {
-    setIsRefreshing(true);
-    setRefreshMessage("");
-
-    try {
-      const response = await fetch("/api/refresh-prices", { method: "POST" });
-      const result = (await response.json()) as { ok?: boolean; stdout?: string; stderr?: string; error?: string };
-
-      if (!response.ok || !result.ok) {
-        throw new Error(result.error || result.stderr || "Refresh failed.");
-      }
-
-      setRefreshMessage(result.stdout?.trim() || "Refresh complete.");
-      window.setTimeout(() => window.location.reload(), 900);
-    } catch (error) {
-      setRefreshMessage(error instanceof Error ? error.message : "Refresh failed.");
-    } finally {
-      setIsRefreshing(false);
-    }
-  }
-
   return (
     <main className="shell">
       <section className="hero" aria-labelledby="page-title">
@@ -166,13 +138,7 @@ function App() {
             Sources
           </button>
         </div>
-        <button className="primaryAction" disabled={isRefreshing} onClick={handleRefreshPrices} type="button">
-          <RefreshCw className={isRefreshing ? "spin" : ""} size={16} aria-hidden="true" />
-          {isRefreshing ? "Refreshing" : "Refresh prices"}
-        </button>
       </section>
-
-      {refreshMessage && <p className="statusLine">{refreshMessage}</p>}
 
       {view === "board" ? (
         <>
@@ -245,97 +211,7 @@ function App() {
 }
 
 function SourceManager() {
-  const [sources, setSources] = useState<ProviderSource[]>(initialSources);
-  const [isSaving, setIsSaving] = useState(false);
-  const [sourceMessage, setSourceMessage] = useState("");
-
-  function updateSource(sourceIndex: number, nextSource: ProviderSource) {
-    setSources((current) => current.map((source, index) => (index === sourceIndex ? nextSource : source)));
-  }
-
-  function updatePage(sourceIndex: number, pageIndex: number, nextPage: ProviderPage) {
-    setSources((current) =>
-      current.map((source, currentSourceIndex) => {
-        if (currentSourceIndex !== sourceIndex) {
-          return source;
-        }
-
-        const pages = source.pages.map((page, currentPageIndex) => {
-          if (currentPageIndex === pageIndex) {
-            return nextPage;
-          }
-
-          return nextPage.primary ? { ...page, primary: false } : page;
-        });
-
-        return { ...source, pages };
-      })
-    );
-  }
-
-  function addPage(sourceIndex: number) {
-    setSources((current) =>
-      current.map((source, index) => {
-        if (index !== sourceIndex) {
-          return source;
-        }
-
-        return {
-          ...source,
-          pages: [
-            ...source.pages,
-            {
-              label: "Official pricing page",
-              url: "https://",
-              kind: "pricing",
-              primary: source.pages.length === 0,
-            },
-          ],
-        };
-      })
-    );
-  }
-
-  function removePage(sourceIndex: number, pageIndex: number) {
-    setSources((current) =>
-      current.map((source, index) => {
-        if (index !== sourceIndex || source.pages.length === 1) {
-          return source;
-        }
-
-        const pages = source.pages.filter((_, currentPageIndex) => currentPageIndex !== pageIndex);
-        if (!pages.some((page) => page.primary)) {
-          pages[0] = { ...pages[0], primary: true };
-        }
-
-        return { ...source, pages };
-      })
-    );
-  }
-
-  async function saveSources() {
-    setIsSaving(true);
-    setSourceMessage("");
-
-    try {
-      const response = await fetch("/api/provider-sources", {
-        method: "PUT",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(sources),
-      });
-      const result = (await response.json()) as { ok?: boolean; error?: string };
-
-      if (!response.ok || !result.ok) {
-        throw new Error(result.error || "Save failed.");
-      }
-
-      setSourceMessage("Saved official provider pages.");
-    } catch (error) {
-      setSourceMessage(error instanceof Error ? error.message : "Save failed.");
-    } finally {
-      setIsSaving(false);
-    }
-  }
+  const sources = initialSources;
 
   return (
     <section className="sourcesPage" aria-label="Provider source pages">
@@ -347,16 +223,10 @@ function SourceManager() {
           </p>
           <h2>Official provider pages</h2>
         </div>
-        <button className="primaryAction" disabled={isSaving} onClick={saveSources} type="button">
-          <Save size={16} aria-hidden="true" />
-          {isSaving ? "Saving" : "Save sources"}
-        </button>
       </div>
 
-      {sourceMessage && <p className="statusLine">{sourceMessage}</p>}
-
       <div className="sourceList">
-        {sources.map((source, sourceIndex) => (
+        {sources.map((source) => (
           <article className="sourcePanel" key={source.id}>
             <div className="sourceHeading">
               <div>
@@ -366,88 +236,20 @@ function SourceManager() {
               <span>{source.region}</span>
             </div>
 
-            <div className="sourceFields">
-              <label>
-                Provider
-                <input
-                  value={source.provider}
-                  onChange={(event) => updateSource(sourceIndex, { ...source, provider: event.target.value })}
-                />
-              </label>
-              <label>
-                Country
-                <input
-                  value={source.country}
-                  onChange={(event) => updateSource(sourceIndex, { ...source, country: event.target.value })}
-                />
-              </label>
-              <label>
-                Region
-                <input
-                  value={source.region}
-                  onChange={(event) => updateSource(sourceIndex, { ...source, region: event.target.value })}
-                />
-              </label>
-            </div>
-
             <div className="pages">
               {source.pages.map((page, pageIndex) => (
                 <div className="pageRow" key={`${source.id}-${pageIndex}`}>
-                  <label>
-                    Label
-                    <input
-                      value={page.label}
-                      onChange={(event) => updatePage(sourceIndex, pageIndex, { ...page, label: event.target.value })}
-                    />
-                  </label>
-                  <label className="urlField">
-                    <Link2 size={14} aria-hidden="true" />
-                    URL
-                    <input
-                      value={page.url}
-                      onChange={(event) => updatePage(sourceIndex, pageIndex, { ...page, url: event.target.value })}
-                    />
-                  </label>
-                  <label>
-                    Kind
-                    <select
-                      value={page.kind}
-                      onChange={(event) =>
-                        updatePage(sourceIndex, pageIndex, { ...page, kind: event.target.value as ProviderPage["kind"] })
-                      }
-                    >
-                      <option value="pricing">pricing</option>
-                      <option value="models">models</option>
-                      <option value="docs">docs</option>
-                    </select>
-                  </label>
-                  <label className="primaryCheck">
-                    <input
-                      checked={page.primary}
-                      onChange={(event) =>
-                        updatePage(sourceIndex, pageIndex, { ...page, primary: event.target.checked })
-                      }
-                      type="checkbox"
-                    />
-                    Primary
-                  </label>
-                  <button
-                    aria-label={`Remove ${page.label}`}
-                    className="iconButton"
-                    disabled={source.pages.length === 1}
-                    onClick={() => removePage(sourceIndex, pageIndex)}
-                    type="button"
-                  >
-                    <Trash2 size={16} aria-hidden="true" />
-                  </button>
+                  <div>
+                    <strong>{page.label}</strong>
+                    <span>{page.primary ? "Primary" : page.kind}</span>
+                  </div>
+                  <a href={page.url} target="_blank" rel="noreferrer">
+                    {page.url}
+                    <ExternalLink size={14} aria-hidden="true" />
+                  </a>
                 </div>
               ))}
             </div>
-
-            <button className="secondaryAction" onClick={() => addPage(sourceIndex)} type="button">
-              <Plus size={16} aria-hidden="true" />
-              Add page
-            </button>
           </article>
         ))}
       </div>
