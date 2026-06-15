@@ -156,39 +156,6 @@ h2 {
   background: var(--accent-dark);
 }
 
-.siteActions {
-  display: inline-flex;
-  gap: 8px;
-  align-items: center;
-}
-
-.siteActions button,
-.siteActions a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  min-height: 40px;
-  padding: 0 12px;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  color: var(--accent-dark);
-  background: var(--panel);
-  font-weight: 800;
-  text-decoration: none;
-}
-
-.siteActions a {
-  color: #fff;
-  background: var(--accent);
-  border-color: var(--accent);
-}
-
-.siteActions button:hover,
-.siteActions a:hover {
-  filter: brightness(0.96);
-}
-
 .hero-meta span {
   display: inline-flex;
   align-items: center;
@@ -586,14 +553,11 @@ h2 {
     flex-direction: column;
   }
 
-  .viewSwitch,
-  .siteActions {
+  .viewSwitch {
     width: 100%;
   }
 
-  .viewSwitch button,
-  .siteActions button,
-  .siteActions a {
+  .viewSwitch button {
     flex: 1;
   }
 
