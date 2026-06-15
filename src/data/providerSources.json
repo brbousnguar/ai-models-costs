@@ -1,0 +1,256 @@
+[
+  {
+    "id": "openai",
+    "provider": "OpenAI",
+    "country": "United States",
+    "region": "US",
+    "pages": [
+      {
+        "label": "OpenAI API pricing",
+        "url": "https://openai.com/api/pricing/",
+        "kind": "pricing",
+        "primary": true
+      },
+      {
+        "label": "OpenAI developer pricing",
+        "url": "https://developers.openai.com/api/docs/pricing",
+        "kind": "pricing",
+        "primary": false
+      }
+    ]
+  },
+  {
+    "id": "anthropic",
+    "provider": "Anthropic",
+    "country": "United States",
+    "region": "US",
+    "pages": [
+      {
+        "label": "Claude API pricing",
+        "url": "https://platform.claude.com/docs/en/about-claude/pricing",
+        "kind": "pricing",
+        "primary": true
+      },
+      {
+        "label": "Claude models overview",
+        "url": "https://platform.claude.com/docs/en/about-claude/models/overview",
+        "kind": "models",
+        "primary": false
+      }
+    ]
+  },
+  {
+    "id": "google",
+    "provider": "Google",
+    "country": "United States",
+    "region": "Global",
+    "pages": [
+      {
+        "label": "Gemini API pricing",
+        "url": "https://ai.google.dev/gemini-api/docs/pricing",
+        "kind": "pricing",
+        "primary": true
+      },
+      {
+        "label": "Gemini models",
+        "url": "https://ai.google.dev/gemini-api/docs/models",
+        "kind": "models",
+        "primary": false
+      }
+    ]
+  },
+  {
+    "id": "xai",
+    "provider": "xAI",
+    "country": "United States",
+    "region": "US",
+    "pages": [
+      {
+        "label": "xAI pricing",
+        "url": "https://docs.x.ai/developers/pricing",
+        "kind": "pricing",
+        "primary": true
+      },
+      {
+        "label": "xAI models",
+        "url": "https://docs.x.ai/developers/models",
+        "kind": "models",
+        "primary": false
+      }
+    ]
+  },
+  {
+    "id": "deepseek",
+    "provider": "DeepSeek",
+    "country": "China",
+    "region": "China",
+    "pages": [
+      {
+        "label": "DeepSeek models and pricing",
+        "url": "https://api-docs.deepseek.com/quick_start/pricing",
+        "kind": "pricing",
+        "primary": true
+      },
+      {
+        "label": "DeepSeek model list",
+        "url": "https://api-docs.deepseek.com/api/list-models",
+        "kind": "models",
+        "primary": false
+      }
+    ]
+  },
+  {
+    "id": "alibaba",
+    "provider": "Alibaba Cloud",
+    "country": "China",
+    "region": "Global / China",
+    "pages": [
+      {
+        "label": "Alibaba Model Studio pricing",
+        "url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing",
+        "kind": "pricing",
+        "primary": true
+      },
+      {
+        "label": "Alibaba Model Studio models",
+        "url": "https://www.alibabacloud.com/help/en/model-studio/models",
+        "kind": "models",
+        "primary": false
+      }
+    ]
+  },
+  {
+    "id": "zai",
+    "provider": "Z.AI",
+    "country": "China",
+    "region": "Global / China",
+    "pages": [
+      {
+        "label": "Z.AI GLM Coding Plan overview",
+        "url": "https://docs.z.ai/devpack/overview",
+        "kind": "pricing",
+        "primary": true
+      },
+      {
+        "label": "Z.AI GLM-5.2 switch guide",
+        "url": "https://docs.z.ai/devpack/latest-model",
+        "kind": "models",
+        "primary": false
+      },
+      {
+        "label": "Z.AI API pricing",
+        "url": "https://docs.z.ai/guides/overview/pricing",
+        "kind": "pricing",
+        "primary": false
+      }
+    ]
+  },
+  {
+    "id": "moonshot",
+    "provider": "Moonshot AI",
+    "country": "China",
+    "region": "Global",
+    "pages": [
+      {
+        "label": "Kimi K2.7 Code pricing",
+        "url": "https://platform.kimi.ai/docs/pricing/chat-k27-code",
+        "kind": "pricing",
+        "primary": true
+      },
+      {
+        "label": "Kimi API platform",
+        "url": "https://platform.kimi.ai/",
+        "kind": "models",
+        "primary": false
+      }
+    ]
+  },
+  {
+    "id": "mistral",
+    "provider": "Mistral",
+    "country": "France",
+    "region": "Europe",
+    "pages": [
+      {
+        "label": "Mistral pricing",
+        "url": "https://mistral.ai/pricing/",
+        "kind": "pricing",
+        "primary": true
+      },
+      {
+        "label": "Mistral models overview",
+        "url": "https://docs.mistral.ai/models/overview",
+        "kind": "models",
+        "primary": false
+      }
+    ]
+  },
+  {
+    "id": "cohere",
+    "provider": "Cohere",
+    "country": "Canada",
+    "region": "North America",
+    "pages": [
+      {
+        "label": "Cohere pricing",
+        "url": "https://cohere.com/pricing",
+        "kind": "pricing",
+        "primary": true
+      },
+      {
+        "label": "Cohere models overview",
+        "url": "https://docs.cohere.com/docs/models",
+        "kind": "models",
+        "primary": false
+      }
+    ]
+  },
+  {
+    "id": "perplexity",
+    "provider": "Perplexity",
+    "country": "United States",
+    "region": "US",
+    "pages": [
+      {
+        "label": "Perplexity API pricing",
+        "url": "https://docs.perplexity.ai/docs/getting-started/pricing",
+        "kind": "pricing",
+        "primary": true
+      }
+    ]
+  },
+  {
+    "id": "runway",
+    "provider": "Runway",
+    "country": "United States",
+    "region": "US",
+    "pages": [
+      {
+        "label": "Runway API pricing",
+        "url": "https://docs.dev.runwayml.com/guides/pricing/",
+        "kind": "pricing",
+        "primary": true
+      },
+      {
+        "label": "Runway API models",
+        "url": "https://docs.dev.runwayml.com/guides/models/",
+        "kind": "models",
+        "primary": false
+      }
+    ]
+  },
+  {
+    "id": "elevenlabs",
+    "provider": "ElevenLabs",
+    "country": "United States",
+    "region": "US",
+    "pages": [
+      {
+        "label": "ElevenLabs API pricing",
+        "url": "https://elevenlabs.io/pricing/api",
+        "kind": "pricing",
+        "primary": true
+      }
+    ]
+  }
+]
