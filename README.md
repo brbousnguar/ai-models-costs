@@ -42,7 +42,7 @@ npm run refresh-prices
 npm run build
 ```
 
-Deploy the contents of `dist/` with GitHub Pages.
+The repository includes a GitHub Actions workflow that builds and deploys `dist/`. In the repository Pages settings, set **Build and deployment** source to **GitHub Actions**.
 
 ## Data Notes
 
