@@ -1,6 +1,6 @@
 import type { PricingRow } from "../types";
 
-export const generatedAt = "2026-06-15";
+export const generatedAt = "2026-06-17";
 
 export const pricingRows: PricingRow[] = [
   {
@@ -31,7 +31,7 @@ export const pricingRows: PricingRow[] = [
     "sourceLabel": "OpenAI API pricing",
     "sourceUrl": "https://openai.com/api/pricing/",
     "sourceStatus": "checked",
-    "lastChecked": "2026-06-15"
+    "lastChecked": "2026-06-17"
   },
   {
     "id": "openai-gpt-5-4",
@@ -61,7 +61,7 @@ export const pricingRows: PricingRow[] = [
     "sourceLabel": "OpenAI API pricing",
     "sourceUrl": "https://openai.com/api/pricing/",
     "sourceStatus": "checked",
-    "lastChecked": "2026-06-15"
+    "lastChecked": "2026-06-17"
   },
   {
     "id": "openai-gpt-5-4-mini",
@@ -91,12 +91,12 @@ export const pricingRows: PricingRow[] = [
     "sourceLabel": "OpenAI API pricing",
     "sourceUrl": "https://openai.com/api/pricing/",
     "sourceStatus": "checked",
-    "lastChecked": "2026-06-15"
+    "lastChecked": "2026-06-17"
   },
   {
     "id": "openai-gpt-realtime-2",
     "provider": "OpenAI",
-    "model": "GPT-Realtime-2",
+    "model": "gpt-realtime-2",
     "country": "United States",
     "region": "US",
     "modality": "Audio",
@@ -137,7 +137,29 @@ export const pricingRows: PricingRow[] = [
     "sourceLabel": "OpenAI API pricing",
     "sourceUrl": "https://openai.com/api/pricing/",
     "sourceStatus": "checked",
-    "lastChecked": "2026-06-15"
+    "lastChecked": "2026-06-17"
+  },
+  {
+    "id": "openai-gpt-realtime-translate",
+    "provider": "OpenAI",
+    "model": "gpt-realtime-translate",
+    "country": "United States",
+    "region": "US",
+    "modality": "Audio",
+    "contextWindow": "Realtime translation session",
+    "input": null,
+    "cachedInput": null,
+    "output": {
+      "label": "Translation",
+      "value": 0.034,
+      "unit": "USD / min"
+    },
+    "extra": [],
+    "notes": "Dedicated live speech translation model for translation sessions.",
+    "sourceLabel": "OpenAI API pricing",
+    "sourceUrl": "https://openai.com/api/pricing/",
+    "sourceStatus": "checked",
+    "lastChecked": "2026-06-17"
   },
   {
     "id": "openai-gpt-image-2",
@@ -178,7 +200,7 @@ export const pricingRows: PricingRow[] = [
     "sourceLabel": "OpenAI API pricing",
     "sourceUrl": "https://openai.com/api/pricing/",
     "sourceStatus": "checked",
-    "lastChecked": "2026-06-15"
+    "lastChecked": "2026-06-17"
   },
   {
     "id": "anthropic-opus-4-8",
@@ -214,7 +236,7 @@ export const pricingRows: PricingRow[] = [
     "sourceLabel": "Claude API pricing",
     "sourceUrl": "https://platform.claude.com/docs/en/about-claude/pricing",
     "sourceStatus": "checked",
-    "lastChecked": "2026-06-15"
+    "lastChecked": "2026-06-17"
   },
   {
     "id": "anthropic-sonnet-4-6",
@@ -250,7 +272,7 @@ export const pricingRows: PricingRow[] = [
     "sourceLabel": "Claude API pricing",
     "sourceUrl": "https://platform.claude.com/docs/en/about-claude/pricing",
     "sourceStatus": "checked",
-    "lastChecked": "2026-06-15"
+    "lastChecked": "2026-06-17"
   },
   {
     "id": "anthropic-haiku-4-5",
@@ -286,7 +308,7 @@ export const pricingRows: PricingRow[] = [
     "sourceLabel": "Claude API pricing",
     "sourceUrl": "https://platform.claude.com/docs/en/about-claude/pricing",
     "sourceStatus": "checked",
-    "lastChecked": "2026-06-15"
+    "lastChecked": "2026-06-17"
   },
   {
     "id": "anthropic-web-search",
@@ -308,7 +330,7 @@ export const pricingRows: PricingRow[] = [
     "sourceLabel": "Claude API pricing",
     "sourceUrl": "https://platform.claude.com/docs/en/about-claude/pricing",
     "sourceStatus": "checked",
-    "lastChecked": "2026-06-15"
+    "lastChecked": "2026-06-17"
   },
   {
     "id": "google-gemini-3-flash-preview",
@@ -354,7 +376,7 @@ export const pricingRows: PricingRow[] = [
     "sourceLabel": "Gemini API pricing",
     "sourceUrl": "https://ai.google.dev/gemini-api/docs/pricing",
     "sourceStatus": "checked",
-    "lastChecked": "2026-06-15"
+    "lastChecked": "2026-06-17"
   },
   {
     "id": "google-gemini-3-pro-image",
@@ -391,7 +413,7 @@ export const pricingRows: PricingRow[] = [
     "sourceLabel": "Gemini API pricing",
     "sourceUrl": "https://ai.google.dev/gemini-api/docs/pricing",
     "sourceStatus": "checked",
-    "lastChecked": "2026-06-15"
+    "lastChecked": "2026-06-17"
   },
   {
     "id": "google-gemini-3-1-flash-tts",
@@ -417,7 +439,7 @@ export const pricingRows: PricingRow[] = [
     "sourceLabel": "Gemini API pricing",
     "sourceUrl": "https://ai.google.dev/gemini-api/docs/pricing",
     "sourceStatus": "checked",
-    "lastChecked": "2026-06-15"
+    "lastChecked": "2026-06-17"
   },
   {
     "id": "xai-grok-4-3",
@@ -447,7 +469,7 @@ export const pricingRows: PricingRow[] = [
     "sourceLabel": "xAI pricing",
     "sourceUrl": "https://docs.x.ai/developers/pricing",
     "sourceStatus": "checked",
-    "lastChecked": "2026-06-15"
+    "lastChecked": "2026-06-17"
   },
   {
     "id": "xai-grok-build-0-1",
@@ -477,7 +499,7 @@ export const pricingRows: PricingRow[] = [
     "sourceLabel": "xAI pricing",
     "sourceUrl": "https://docs.x.ai/developers/pricing",
     "sourceStatus": "checked",
-    "lastChecked": "2026-06-15"
+    "lastChecked": "2026-06-17"
   },
   {
     "id": "xai-grok-imagine-video",
@@ -514,7 +536,7 @@ export const pricingRows: PricingRow[] = [
     "sourceLabel": "xAI pricing",
     "sourceUrl": "https://docs.x.ai/developers/pricing",
     "sourceStatus": "checked",
-    "lastChecked": "2026-06-15"
+    "lastChecked": "2026-06-17"
   },
   {
     "id": "xai-voice-realtime",
@@ -547,7 +569,7 @@ export const pricingRows: PricingRow[] = [
     "sourceLabel": "xAI pricing",
     "sourceUrl": "https://docs.x.ai/developers/pricing",
     "sourceStatus": "checked",
-    "lastChecked": "2026-06-15"
+    "lastChecked": "2026-06-17"
   },
   {
     "id": "deepseek-v4-flash-non-thinking",
@@ -577,7 +599,7 @@ export const pricingRows: PricingRow[] = [
     "sourceLabel": "DeepSeek models and pricing",
     "sourceUrl": "https://api-docs.deepseek.com/quick_start/pricing",
     "sourceStatus": "checked",
-    "lastChecked": "2026-06-15"
+    "lastChecked": "2026-06-17"
   },
   {
     "id": "deepseek-v4-flash-thinking",
@@ -607,7 +629,7 @@ export const pricingRows: PricingRow[] = [
     "sourceLabel": "DeepSeek models and pricing",
     "sourceUrl": "https://api-docs.deepseek.com/quick_start/pricing",
     "sourceStatus": "checked",
-    "lastChecked": "2026-06-15"
+    "lastChecked": "2026-06-17"
   },
   {
     "id": "alibaba-qwen3-5-flash",
@@ -633,7 +655,7 @@ export const pricingRows: PricingRow[] = [
     "sourceLabel": "Alibaba Model Studio pricing",
     "sourceUrl": "https://www.alibabacloud.com/help/en/model-studio/model-pricing",
     "sourceStatus": "checked",
-    "lastChecked": "2026-06-15"
+    "lastChecked": "2026-06-17"
   },
   {
     "id": "alibaba-qwen-flash",
@@ -659,7 +681,7 @@ export const pricingRows: PricingRow[] = [
     "sourceLabel": "Alibaba Model Studio pricing",
     "sourceUrl": "https://www.alibabacloud.com/help/en/model-studio/model-pricing",
     "sourceStatus": "checked",
-    "lastChecked": "2026-06-15"
+    "lastChecked": "2026-06-17"
   },
   {
     "id": "alibaba-kimi-k2-5",
@@ -685,7 +707,7 @@ export const pricingRows: PricingRow[] = [
     "sourceLabel": "Alibaba Model Studio pricing",
     "sourceUrl": "https://www.alibabacloud.com/help/en/model-studio/model-pricing",
     "sourceStatus": "checked",
-    "lastChecked": "2026-06-15"
+    "lastChecked": "2026-06-17"
   },
   {
     "id": "zai-glm-5-2",
@@ -718,7 +740,7 @@ export const pricingRows: PricingRow[] = [
     "sourceLabel": "Z.AI GLM Coding Plan overview",
     "sourceUrl": "https://docs.z.ai/devpack/overview",
     "sourceStatus": "checked",
-    "lastChecked": "2026-06-15"
+    "lastChecked": "2026-06-17"
   },
   {
     "id": "moonshot-kimi-k2-7-code",
@@ -748,7 +770,7 @@ export const pricingRows: PricingRow[] = [
     "sourceLabel": "Kimi K2.7 Code pricing",
     "sourceUrl": "https://platform.kimi.ai/docs/pricing/chat-k27-code",
     "sourceStatus": "checked",
-    "lastChecked": "2026-06-15"
+    "lastChecked": "2026-06-17"
   },
   {
     "id": "mistral-large-3",
@@ -774,7 +796,7 @@ export const pricingRows: PricingRow[] = [
     "sourceLabel": "Mistral pricing",
     "sourceUrl": "https://mistral.ai/pricing/",
     "sourceStatus": "checked",
-    "lastChecked": "2026-06-15"
+    "lastChecked": "2026-06-17"
   },
   {
     "id": "mistral-medium-3-5",
@@ -800,7 +822,7 @@ export const pricingRows: PricingRow[] = [
     "sourceLabel": "Mistral pricing",
     "sourceUrl": "https://mistral.ai/pricing/",
     "sourceStatus": "checked",
-    "lastChecked": "2026-06-15"
+    "lastChecked": "2026-06-17"
   },
   {
     "id": "mistral-small-4",
@@ -826,7 +848,7 @@ export const pricingRows: PricingRow[] = [
     "sourceLabel": "Mistral pricing",
     "sourceUrl": "https://mistral.ai/pricing/",
     "sourceStatus": "checked",
-    "lastChecked": "2026-06-15"
+    "lastChecked": "2026-06-17"
   },
   {
     "id": "mistral-ocr-3",
@@ -854,7 +876,7 @@ export const pricingRows: PricingRow[] = [
     "sourceLabel": "Mistral pricing",
     "sourceUrl": "https://mistral.ai/pricing/",
     "sourceStatus": "checked",
-    "lastChecked": "2026-06-15"
+    "lastChecked": "2026-06-17"
   },
   {
     "id": "cohere-aya-expanse",
@@ -880,7 +902,7 @@ export const pricingRows: PricingRow[] = [
     "sourceLabel": "Cohere pricing",
     "sourceUrl": "https://cohere.com/pricing",
     "sourceStatus": "checked",
-    "lastChecked": "2026-06-15"
+    "lastChecked": "2026-06-17"
   },
   {
     "id": "cohere-rerank-4-pro-vault",
@@ -908,7 +930,7 @@ export const pricingRows: PricingRow[] = [
     "sourceLabel": "Cohere pricing",
     "sourceUrl": "https://cohere.com/pricing",
     "sourceStatus": "checked",
-    "lastChecked": "2026-06-15"
+    "lastChecked": "2026-06-17"
   },
   {
     "id": "cohere-embed-4-vault",
@@ -936,7 +958,7 @@ export const pricingRows: PricingRow[] = [
     "sourceLabel": "Cohere pricing",
     "sourceUrl": "https://cohere.com/pricing",
     "sourceStatus": "checked",
-    "lastChecked": "2026-06-15"
+    "lastChecked": "2026-06-17"
   },
   {
     "id": "elevenlabs-flash-turbo",
@@ -958,6 +980,6 @@ export const pricingRows: PricingRow[] = [
     "sourceLabel": "ElevenLabs API pricing",
     "sourceUrl": "https://elevenlabs.io/pricing/api",
     "sourceStatus": "checked",
-    "lastChecked": "2026-06-15"
+    "lastChecked": "2026-06-17"
   }
 ];
