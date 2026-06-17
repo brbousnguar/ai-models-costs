@@ -1,6 +1,6 @@
 # AI Models Cost Board
 
-A Vite React dashboard for comparing public API pricing across major AI model providers. It includes American, Chinese, European, and specialist APIs such as Z.AI and Moonshot/Kimi, with rows for text, reasoning, multimodal, image, audio, video, document, embedding, rerank, and tooling prices.
+A Vite React dashboard for comparing public API pricing across major AI model providers. It includes American, Chinese, European, and specialist APIs such as Z.AI and Moonshot/Kimi, with rows for text, reasoning, multimodal, image, audio, video, live translation, document, embedding, rerank, and tooling prices.
 
 ## Setup
 
@@ -46,6 +46,6 @@ The repository includes a GitHub Actions workflow that builds and deploys `dist/
 
 ## Data Notes
 
-Token prices are normalized to USD per 1M tokens when a provider publishes that unit. Media and specialist products keep their native public units, such as USD per image, minute, hour, character, page, request, generated second, or provider credits.
+Token prices are normalized to USD per 1M tokens when a provider publishes that unit. Media, live translation, and specialist products keep their native public units, such as USD per image, minute, hour, character, page, request, generated second, or provider credits.
 
 The dashboard is static after build and does not need a backend at runtime.
